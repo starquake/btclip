@@ -1,0 +1,14 @@
+{
+    "name": "btclip",
+    "main": "index.html",
+    "version": "0.0.1",
+    "window": {
+        "title": "BTClip",
+        "toolbar": false,
+        "frame": true,
+        "width": 620,
+        "height": 620,
+        "position": "mouse",
+        "resizable": false
+    }
+}

@@ -1,0 +1,18 @@
+body {
+    padding-top: 50px;
+}
+.btclip {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+#holder {
+    border: 10px dashed #ccc;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+#holder.hover {
+    border: 10px dashed #333;
+}
