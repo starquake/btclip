@@ -32,23 +32,26 @@
 <div class="container">
     <div class=".col-md-10 .col-md-offset-1">
         <div class="btclip">
-            <form class="form-horizontal" role="form">
+            <form class="form-vertical" role="form">
+                <legend>Settings</legend>
+                <fieldset class="well">
                 <div class="form-group">
                     <span class="help-block">The local path to the synced folder. (e.g. C:\Users\john\BTSync\Public)</span>
-                    <div class="input-group input-group-lg">
+                    <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-hdd"></span></span>
                         <input type="text" class="form-control" id="basePath" placeholder="Local Path">
                     </div>
                 </div>
                 <div class="form-group">
                     <span class="help-block">The public url to the synced folder. (e.g. http://example.com/files)</span>
-                    <div class="input-group input-group-lg">
+                    <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
                         <input type="text" class="form-control" id="baseUrl" placeholder="Public URL">
                     </div>
                 </div>
+                </fieldset>
                 <div class="form-group">
-                    <span class="help-block">Drag files you want to share here:</span>
+                    <span class="help-block text-center">Drag files you want to share here:</span>
                     <div id="holder"></div>
                 </div>
             </form>

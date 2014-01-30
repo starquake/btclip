@@ -6,8 +6,8 @@
         "title": "BTClip",
         "toolbar": false,
         "frame": true,
-        "width": 620,
-        "height": 620,
+        "width": 600,
+        "height": 800,
         "position": "mouse",
         "resizable": false
     }
