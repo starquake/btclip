@@ -1,15 +1,33 @@
 // Load native UI library
 var gui = require('nw.gui');
+var os = require("os");
 var clipboard = gui.Clipboard.get();
 
 var holderEl = document.getElementById('holder');
 
-var basePath = document.getElementById("basePath");
-var baseUrl = document.getElementById("baseUrl");
+var basePathEl = document.getElementById("basePath");
+var baseUrlEl = document.getElementById("baseUrl");
+
+var basePathExample = document.getElementById("basePathExample");
+switch (os.platform()) {
+    case 'win32':
+        basePathExample.innerHTML = 'C:\\Users\\John\\BTSync\\Public\\';
+        break;
+    case 'darwin':
+        basePathExample.innerHTML = '/Users/John/BTSync/Public/';
+        break;
+    default: // linux
+        basePathExample.innerHTML = '/home/john/BTSync/Public/';
+}
+
 
 // Read previous values
-basePath.value = localStorage.basePath || "";
-baseUrl.value = localStorage.baseUrl || "";
+basePathEl.value = localStorage.basePath || "";
+baseUrlEl.value = localStorage.baseUrl || "";
+
+function escapeRegExp(string) {
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
 
 // prevent default behavior from changing page on dropped file
 window.ondragover = function (e) {
@@ -35,19 +53,21 @@ holderEl.ondrop = function (e) {
     this.className = '';
 
     for (var i = 0; i < e.dataTransfer.files.length; ++i) {
-        var origFilename = e.dataTransfer.files[i].path;
-        var newFilename = origFilename.replace(new RegExp("^" + basePath.value, "g"), baseUrl.value);
-        console.log(origFilename + ' -> ' + newFilename);
-        clipboard.set(newFilename, 'text');
+        var originalFullPath = e.dataTransfer.files[i].path;
+        var relativePath = originalFullPath.replace(new RegExp("^" + escapeRegExp(basePathEl.value), "g"), '');
+        if (os.platform() === 'win32') {
+            relativePath = relativePath.replace('\\', '/');
+        }
+        var newUrl = baseUrlEl.value + relativePath;
 
-
+        console.log(originalFullPath + ' -> ' + newUrl);
+        clipboard.set(newUrl, 'text');
     }
     return false;
 };
 
 gui.Window.get().on('close', function () {
-    localStorage.basePath = basePath.value;
-    localStorage.baseUrl = baseUrl.value;
+    localStorage.basePath = basePathEl.value;
+    localStorage.baseUrl = baseUrlEl.value;
     this.close(true);
 });
-
