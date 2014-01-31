@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "window": {
         "title": "BTClip",
+        "icon" : "img/icon.png",
         "toolbar": false,
         "frame": true,
         "width": 600,
