@@ -17,3 +17,6 @@ For example:
 
   5. Paste the URL in your favorite email editor or instant messaging app.
 
+This program uses node-webkit, for more information look here:
+
+  *  https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps#wiki-windows
