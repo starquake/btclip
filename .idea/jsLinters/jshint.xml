@@ -50,7 +50,7 @@
     <option dojo="false" />
     <option jquery="false" />
     <option mootools="false" />
-    <option node="false" />
+    <option node="true" />
     <option nonstandard="false" />
     <option phantom="false" />
     <option prototypejs="false" />

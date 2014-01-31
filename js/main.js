@@ -5,19 +5,23 @@ var clipboard = gui.Clipboard.get();
 
 var holderEl = document.getElementById('holder');
 
+var pathDelimiter = '/';
 var basePathEl = document.getElementById("basePath");
 var baseUrlEl = document.getElementById("baseUrl");
+var basePathExampleEl = document.getElementById("basePathExample");
+var openBasePathEl = document.getElementById("openBasePath");
 
-var basePathExample = document.getElementById("basePathExample");
+
 switch (os.platform()) {
     case 'win32':
-        basePathExample.innerHTML = 'C:\\Users\\John\\BTSync\\Public\\';
+        basePathExampleEl.innerHTML = 'C:\\Users\\John\\BTSync\\Public\\';
+        pathDelimiter = '\\';
         break;
     case 'darwin':
-        basePathExample.innerHTML = '/Users/John/BTSync/Public/';
+        basePathExampleEl.innerHTML = '/Users/John/BTSync/Public/';
         break;
     default: // linux
-        basePathExample.innerHTML = '/home/john/BTSync/Public/';
+        basePathExampleEl.innerHTML = '/home/john/BTSync/Public/';
 }
 
 
@@ -27,6 +31,13 @@ baseUrlEl.value = localStorage.baseUrl || "";
 
 function escapeRegExp(string) {
     return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
+openBasePathEl.onclick = function (e) {
+    if (basePathEl.value.slice(-1) !== pathDelimiter) {
+        basePathEl.value = basePathEl.value + pathDelimiter;
+    }
+    gui.Shell.showItemInFolder(basePathEl.value);
 }
 
 // prevent default behavior from changing page on dropped file
@@ -58,7 +69,11 @@ holderEl.ondrop = function (e) {
         if (os.platform() === 'win32') {
             relativePath = relativePath.replace('\\', '/');
         }
-        var newUrl = baseUrlEl.value + relativePath;
+        if (baseUrlEl.value.slice(-1) !== '/') {
+            baseUrlEl.value = baseUrlEl.value + '/';
+        }
+
+        var newUrl = baseUrlEl.value + encodeURI(relativePath);
 
         console.log(originalFullPath + ' -> ' + newUrl);
         clipboard.set(newUrl, 'text');
