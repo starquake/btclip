@@ -38,14 +38,14 @@ openBasePathEl.onclick = function (e) {
 };
 
 // prevent default behavior from changing page on dropped file
-window.ondragover = function (e) {
+$(window).on('dragover', function (e) {
     e.preventDefault();
     return false;
-};
-window.ondrop = function (e) {
+});
+$(window).on('drop', function (e) {
     e.preventDefault();
     return false;
-};
+});
 
 
 $('#holder').on('dragover', function () {
