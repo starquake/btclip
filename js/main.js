@@ -4,8 +4,6 @@ var os = require("os");
 var path = require("path");
 var clipboard = gui.Clipboard.get();
 
-var holderEl = document.getElementById('holder');
-
 var basePathEl = document.getElementById("basePath");
 var baseUrlEl = document.getElementById("baseUrl");
 var basePathExampleEl = document.getElementById("basePathExample");
@@ -50,20 +48,20 @@ window.ondrop = function (e) {
 };
 
 
-holderEl.ondragover = function () {
+$('#holder').on('dragover', function () {
     this.className = 'hover';
     return false;
-};
-holderEl.ondragend = function () {
+});
+$('#holder').on('dragend', function () {
     this.className = '';
     return false;
-};
-holderEl.ondrop = function (e) {
+});
+$('#holder').on('drop', function (e) {
     e.preventDefault();
     this.className = '';
     var urls = [];
-    for (var i = 0; i < e.dataTransfer.files.length; ++i) {
-        var originalFullPath = e.dataTransfer.files[i].path;
+    for (var i = 0; i < e.originalEvent.dataTransfer.files.length; ++i) {
+        var originalFullPath = e.originalEvent.dataTransfer.files[i].path;
 
         basePathEl.value = path.normalize(basePathEl.value);
         basePathEl.value = path.dirname(basePathEl.value + path.sep + '.');
@@ -94,7 +92,7 @@ holderEl.ondrop = function (e) {
     }
 
     return false;
-};
+});
 
 gui.Window.get().on('close', function () {
     localStorage.basePath = basePathEl.value;
