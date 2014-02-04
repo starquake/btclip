@@ -19,4 +19,4 @@ For example:
 
 This program uses node-webkit, for more information look here:
 
-  *  https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps#wiki-windows
+  *  https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps#wiki-all-platforms
