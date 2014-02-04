@@ -10,30 +10,17 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
-                <!--<span class="sr-only">Toggle navigation</span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-            <!--</button>-->
+            <button type="button" id="settingsMenu" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <div class="navbar-brand">BTClip</div>
         </div>
-        <!--<div class="collapse navbar-collapse">-->
-            <!--<ul class="nav navbar-nav">-->
-                <!--<li class="active"><a href="#">Home</a></li>-->
-                <!--<li><a href="#about">About</a></li>-->
-                <!--<li><a href="#contact">Contact</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--/.nav-collapse -->
-    </div>
-</div>
-
-<div class="container">
-    <div class=".col-md-10 .col-md-offset-1">
-        <div class="btclip">
+        <div class="collapse navbar-collapse">
             <form class="form-vertical" role="form">
-                <legend>Settings</legend>
                 <fieldset class="well">
                     <div class="form-group">
                         <span class="help-block">The local path to the synced folder. (e.g. <span
@@ -43,7 +30,8 @@
                             <span class="input-group-addon"><span class="glyphicon glyphicon-hdd"></span></span>
                             <input type="text" class="form-control" id="basePath" placeholder="Local Path">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" id="openBasePath"><span class="glyphicon glyphicon-folder-open"></span></button>
+                                <button class="btn btn-default" type="button" id="openBasePath"><span
+                                        class="glyphicon glyphicon-folder-open"></span></button>
                             </span>
                         </div>
                     </div>
@@ -56,6 +44,16 @@
                         </div>
                     </div>
                 </fieldset>
+            </form>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <div class="btclip">
+        <div class=".col-md-10 .col-md-offset-1">
+            <form class="form-vertical" role="form">
                 <div class="form-group">
                     <span class="help-block text-center">Drag files you want to share here:</span>
 
@@ -70,7 +68,7 @@
 </div>
 <!-- /.container -->
 
-<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 

@@ -15,7 +15,7 @@
     <option nonew="true" />
     <option plusplus="false" />
     <option undef="true" />
-    <option strict="true" />
+    <option strict="false" />
     <option trailing="false" />
     <option latedef="false" />
     <option unused="false" />
@@ -48,7 +48,7 @@
     <option couch="false" />
     <option devel="false" />
     <option dojo="false" />
-    <option jquery="false" />
+    <option jquery="true" />
     <option mootools="false" />
     <option node="true" />
     <option nonstandard="false" />
