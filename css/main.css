@@ -16,3 +16,6 @@ body {
 #holder.hover {
     border: 10px dashed #333;
 }
+.navbar-toggle {
+    color: #fff;
+}

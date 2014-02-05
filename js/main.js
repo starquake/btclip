@@ -94,6 +94,21 @@ $('#holder').on('drop', function (e) {
     return false;
 });
 
+if (!(basePathEl.value && baseUrlEl.value)) {
+    $('#settingsMenu').popover({
+        placement: 'bottom',
+        content: "You haven't set your Local path and Public URL yet. Please configure your settings.",
+        trigger: 'manual'
+    });
+    $('#settingsMenu').popover('show');
+} else {
+    $('#settingsMenu').popover('hide');
+}
+
+$('#settingsMenu').click(function () {
+    $('#settingsMenu').popover('hide');
+})
+
 gui.Window.get().on('close', function () {
     localStorage.basePath = basePathEl.value;
     localStorage.baseUrl = baseUrlEl.value;
