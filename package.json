@@ -5,7 +5,7 @@
     "window": {
         "title": "BTClip",
         "icon" : "img/icon.png",
-        "toolbar": true,
+        "toolbar": false,
         "frame": true,
         "width": 600,
         "height": 500,
