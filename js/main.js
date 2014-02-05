@@ -66,6 +66,10 @@ $('#holder').on('drop', function (e) {
         basePathEl.value = path.normalize(basePathEl.value);
         basePathEl.value = path.dirname(basePathEl.value + path.sep + '.');
 
+        if (baseUrlEl.value && baseUrlEl.value.slice(-1) !== '/') {
+            baseUrlEl.value = baseUrlEl.value + '/';
+        }
+
         if (originalFullPath.indexOf(basePathEl.value) === 0) {
 
             var relativePath = originalFullPath.replace(new RegExp("^" + escapeRegExp(basePathEl.value), "g"), '');
@@ -73,9 +77,9 @@ $('#holder').on('drop', function (e) {
             if (os.platform() === 'win32') {
                 relativePath = relativePath.replace(/\\/g, '/');
             }
-            if (baseUrlEl.value && baseUrlEl.value.slice(-1) !== '/') {
-                baseUrlEl.value = baseUrlEl.value + '/';
-            }
+
+            relativePath = relativePath.slice(1);
+
             var newUrl = baseUrlEl.value + encodeURI(relativePath);
             urls.push(newUrl);
 
@@ -107,7 +111,7 @@ if (!(basePathEl.value && baseUrlEl.value)) {
 
 $('#settingsMenu').click(function () {
     $('#settingsMenu').popover('hide');
-})
+});
 
 gui.Window.get().on('close', function () {
     localStorage.basePath = basePathEl.value;
