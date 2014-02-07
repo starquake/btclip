@@ -1,7 +1,7 @@
 BTClip v0.1.0
 =============
 
-BTClip is a tool to be used with other filesyncing tools like BTSync.
+BTClip is a tool to share links to large files synced with tools like BTSync or OwnCloud.
 
 
 For example:
