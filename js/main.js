@@ -70,9 +70,16 @@ $('#holder').on('drop', function (e) {
             baseUrlEl.value = baseUrlEl.value + '/';
         }
 
-        if (originalFullPath.indexOf(basePathEl.value) === 0) {
+        if (originalFullPath.toUpperCase().indexOf(basePathEl.value.toUpperCase()) === 0) {
+            var pathRE;
 
-            var relativePath = originalFullPath.replace(new RegExp("^" + escapeRegExp(basePathEl.value), "g"), '');
+            if (os.platform() === 'win32') {
+                pathRE = new RegExp("^" + escapeRegExp(basePathEl.value), "gi");
+            } else {
+                pathRE = new RegExp("^" + escapeRegExp(basePathEl.value), "g");
+            }
+
+            var relativePath = originalFullPath.replace(pathRE, '');
 
             if (os.platform() === 'win32') {
                 relativePath = relativePath.replace(/\\/g, '/');
