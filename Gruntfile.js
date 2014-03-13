@@ -1,7 +1,6 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
         nodewebkit: {
             options: {
                 version: "0.8.5",
@@ -12,7 +11,7 @@ module.exports = function (grunt) {
                 linux32: true, // We don't need linux32
                 linux64: true // We don't need linux64
             },
-            src: ['./src/**'] // Your node-webkit app
+            src: ['src/**'] // Your node-webkit app
         },
         bower: {
             install: {}
@@ -24,6 +23,5 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['bower','nodewebkit']);
-
 
 };
