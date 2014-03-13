@@ -1,21 +1,26 @@
-BTClip v0.1.0
-=============
+BTClip
+======
 
 BTClip is a tool to share links to large files synced with tools like BTSync or OwnCloud.
 
 
-For example:
-------------
+How to use
+----------
+  Say you want to sync a folder (in this example /home/starquake/BTSync/Public) with a folder on a webserver (in this example http://example.org/public_files)
 
-  1. Sync a folder (e.g. /home/starquake/BTSync/Public) with a folder on a webserver (e.g. http://example.org/public_files)
+  1. Run the app.
 
-  2. Set the local path and the public URL
+  2. Open the settings menu (using the button on the upper right)
 
-  3. Drag a file from the local folder onto the dashed square in the BTClip window.
+  3. Set the local path to /home/starquake/BTSync/Public
 
-  4. BTClip puts the public URL on the clipboard
+  4. Set the public URL to http://example.org/public_files
 
-  5. Paste the URL in your favorite email editor or instant messaging app.
+  5. Drag a file from the local folder onto the dashed square in the BTClip window.
+
+  6. BTClip puts the public URL on the clipboard
+
+  7. Paste the URL in your favorite email editor or instant messaging app.
 
 This program uses node-webkit, for more information look here:
 
