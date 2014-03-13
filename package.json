@@ -1,15 +1,25 @@
 {
     "name": "btclip",
-    "main": "index.html",
+    "main": "src/index.html",
     "version": "0.1.0",
+    "private": true,
     "window": {
         "title": "BTClip",
-        "icon" : "img/icon.png",
+        "icon": "src/img/icon.png",
         "toolbar": false,
         "frame": true,
         "width": 600,
         "height": 500,
         "position": "mouse",
         "resizable": false
+    },
+    "devDependencies": {
+        "node-webkit": "~0.8.5",
+        "grunt": "~0.4.4",
+        "grunt-node-webkit-builder": "~0.1.17",
+        "grunt-bower-task": "~0.3.4"
+    },
+    "scripts": {
+        "start": "nodewebkit"
     }
 }
