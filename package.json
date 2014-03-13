@@ -3,16 +3,6 @@
     "main": "src/index.html",
     "version": "0.1.0",
     "private": true,
-    "window": {
-        "title": "BTClip",
-        "icon": "src/img/icon.png",
-        "toolbar": false,
-        "frame": true,
-        "width": 600,
-        "height": 500,
-        "position": "mouse",
-        "resizable": false
-    },
     "devDependencies": {
         "nodewebkit": "~0.8.5",
         "grunt": "~0.4.4",
