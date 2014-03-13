@@ -1,11 +1,11 @@
 {
     "name": "btclip",
-    "main": "src/index.html",
+    "main": "index.html",
     "version": "0.1.0",
     "private": true,
     "window": {
         "title": "BTClip",
-        "icon": "src/img/icon.png",
+        "icon": "img/icon.png",
         "toolbar": false,
         "frame": true,
         "width": 600,
