@@ -87,8 +87,6 @@
 
                         //relativePath = relativePath.slice(1);
 
-                        relativePath = relativePath.replace(/ /g, '+');
-
                         var newUrl = _baseUrl + encodeURI(relativePath);
                         urls.push(newUrl);
 
