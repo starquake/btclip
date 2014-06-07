@@ -31,6 +31,10 @@ Build Instructions
 
 * Install NodeJS: http://nodejs.org/
 
+* Open up a shell in the project folder
+
+* run npm install
+
 * Install grunt: <code>npm install grunt-cli -g</code>
 
 * Run the default grunt task: <code>grunt</code>
