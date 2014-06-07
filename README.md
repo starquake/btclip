@@ -1,7 +1,7 @@
 BTClip
 ======
 
-BTClip is a tool to share links to large files synced with tools like BTSync or OwnCloud.
+BTClip is a tool to share public links to large files synced with tools like BTSync or OwnCloud.
 
 
 How to use
@@ -25,3 +25,12 @@ How to use
 This program uses node-webkit, for more information look here:
 
   *  https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps#wiki-all-platforms
+
+Build Instructions
+------------------
+
+* Install NodeJS: http://nodejs.org/
+
+* Install grunt: <code>npm install grunt-cli -g</code>
+
+* Run the default grunt task: <code>grunt</code>
