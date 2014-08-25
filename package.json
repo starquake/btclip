@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "private": true,
     "devDependencies": {
-        "nodewebkit": "~0.9.2",
+        "nodewebkit": "0.9.2-6",
         "grunt": "~0.4.4",
         "grunt-node-webkit-builder": "~0.1.17",
         "grunt-bower-task": "~0.3.4"
