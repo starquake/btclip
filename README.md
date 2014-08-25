@@ -35,6 +35,10 @@ Build Instructions
 
 * run npm install
 
+* Install bower: <code>npm install bower -g</code>
+
 * Install grunt: <code>npm install grunt-cli -g</code>
 
 * Run the default grunt task: <code>grunt</code>
+
+* If everything went well you can find the binaries in builds/releases/BTClip
