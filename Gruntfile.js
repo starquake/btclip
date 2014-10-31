@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         nodewebkit: {
             options: {
-                version: "0.9.2",
+                version: "0.10.5",
                 mac_icns: 'btclip.icns',
                 build_dir: './builds', // Where the build version of my node-webkit app is saved
                 mac: true, // We want to build it for mac
