@@ -51,6 +51,10 @@
                 return false;
             });
 
+            $(window).on('load', function () {
+                gui.Window.get().show();
+            });
+
             $holder.on('dragover', function () {
                 this.className = 'hover';
                 return false;
@@ -119,6 +123,7 @@
             $settingsMenu.click(function () {
                 $settingsMenu.popover('hide');
             });
+
 
         }
 

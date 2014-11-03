@@ -1,15 +1,16 @@
 {
-    "name": "BTClip",
-    "main": "index.html",
-    "version": "0.1.0",
-    "window": {
-        "title": "BTClip",
-        "icon": "img/icon.png",
-        "toolbar": false,
-        "frame": true,
-        "width": 600,
-        "height": 500,
-        "position": "mouse",
-        "resizable": false
-    }
+  "name": "BTClip",
+  "main": "index.html",
+  "version": "0.1.0",
+  "window": {
+    "title": "BTClip",
+    "icon": "img/icon.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 600,
+    "height": 500,
+    "position": "mouse",
+    "resizable": false,
+    "show": false
+  }
 }
