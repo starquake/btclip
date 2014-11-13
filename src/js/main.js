@@ -27,6 +27,7 @@
                     break;
                 case 'darwin':
                     $basePathExample.html('/Users/John/BTSync/Public/');
+                    initMac();
                     break;
                 default: // linux
                     $basePathExample.html('/home/john/BTSync/Public/');
@@ -125,6 +126,12 @@
             });
 
 
+        }
+
+        function initMac() {
+            var mb = new gui.Menu({type: "menubar"});
+            mb.createMacBuiltin("BTClip");
+            gui.Window.get().menu = mb;
         }
 
         function handleBasePathClick() {
