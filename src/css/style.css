@@ -16,6 +16,24 @@ body {
 #holder.hover {
     border: 10px dashed #333;
 }
+
 .navbar-toggle {
     color: #fff;
+}
+
+.noselect, .navbar-brand, .help-block {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.navbar-toggle, .btn, .noselect, .help-block {
+    cursor: default;
+}
+
+.navbar-brand {
+    cursor: pointer;
 }
