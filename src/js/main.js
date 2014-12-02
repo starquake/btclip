@@ -10,9 +10,11 @@
 
     var BTClip = (function () {
 
-        var $basePath = $("#basePath"),
+        var $fileDialog = $('#fileDialog'),
+            $basePath = $("#basePath"),
             $baseUrl = $("#baseUrl"),
             $basePathExample = $("#basePathExample"),
+            $selectBasePath = $("#selectBasePath"),
             $openBasePath = $("#openBasePath"),
             $holder = $('#holder'),
             $settingsMenu = $('#settingsMenu'),
@@ -40,7 +42,8 @@
             $basePath.val(_basePath);
             $baseUrl.val(_baseUrl);
 
-            $openBasePath.on('click', handleBasePathClick);
+            $selectBasePath.on('click', handleSelectBasePathClick);
+            $openBasePath.on('click', handleOpenBasePathClick);
 
             // prevent default behavior from changing page on dropped file
             $(window).on('dragover', function (e) {
@@ -125,6 +128,12 @@
                 $settingsMenu.popover('hide');
             });
 
+            $fileDialog.change(function(){
+                var v = $(this).val();
+                $basePath.val(v);
+                updateBasePath();
+            });
+
 
         }
 
@@ -134,7 +143,10 @@
             gui.Window.get().menu = mb;
         }
 
-        function handleBasePathClick() {
+        function handleSelectBasePathClick() {
+            $fileDialog.trigger('click');
+        }
+        function handleOpenBasePathClick() {
             updateBasePath();
             gui.Shell.openItem(_basePath);
         }
