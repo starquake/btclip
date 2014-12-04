@@ -1,7 +1,7 @@
 {
   "name": "BTClip",
   "main": "index.html",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "window": {
     "title": "BTClip",
     "icon": "img/icon.png",
