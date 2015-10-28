@@ -143,10 +143,13 @@
 
             mb.createMacBuiltin("BTClip");
             win.menu = mb;
-            
+
+            win.focus();
+
             // Show window when hidden using close button
             gui.App.on('reopen', function() {
               win.show(); // show the window again.
+              win.focus();
             });
         }
 
