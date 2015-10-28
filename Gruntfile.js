@@ -1,9 +1,9 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-        nodewebkit: {
+        nwjs: {
             options: {
-                version: "0.11.2",
+                version: '0.12.3',
                 mac_icns: 'btclip.icns',
                 build_dir: './builds', // Where the build version of my node-webkit app is saved
                 mac: true, // We want to build it for mac
@@ -18,10 +18,10 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-node-webkit-builder');
+    grunt.loadNpmTasks('grunt-nw-builder');
     grunt.loadNpmTasks('grunt-bower-task');
 
     // Default task(s).
-    grunt.registerTask('default', ['bower', 'nodewebkit']);
+    grunt.registerTask('default', ['bower', 'nwjs']);
 
 };
