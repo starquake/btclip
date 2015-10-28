@@ -139,8 +139,15 @@
 
         function initMac() {
             var mb = new gui.Menu({type: "menubar"});
+            var win = gui.Window.get();
+
             mb.createMacBuiltin("BTClip");
-            gui.Window.get().menu = mb;
+            win.menu = mb;
+            
+            // Show window when hidden using close button
+            gui.App.on('reopen', function() {
+              win.show(); // show the window again.
+            });
         }
 
         function handleSelectBasePathClick() {
@@ -189,8 +196,14 @@
 
     BTClip.init();
 
-    gui.Window.get().on('close', function () {
-        BTClip.terminate(this);
+    gui.Window.get().on('close', function (action) {
+        if(os.platform() !== 'darwin' || action === 'quit') {
+          // When not on OS X or the application is closed using the dock icon we terminate the application
+          BTClip.terminate(this);
+        } else {
+          // When on OS X and the close button is clicked, we hide the window and keep running
+          this.hide();
+        }
     });
 
 
